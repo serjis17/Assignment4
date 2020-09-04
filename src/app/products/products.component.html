@@ -1,26 +1,19 @@
+<h2>Products List</h2>
 <table>
   <tr>
     <th>Product Name</th>
     <th>Quantity</th>
   </tr>
-  <tr>
-    <td>Moto G5</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>Raycold Geyser</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>Dell Inspiron Laptop</td>
-    <td>1</td>
-  </tr>
+  <tr *ngFor="let item of products">
+    <td>{{item.name}}</td>
+    <td>{{item.quantity}}</td>
+
 </table>
 <br>
 <div>
 <label for="product">Enter Product Name</label>
-  <input type="search">
+  <input type="search" #f1>
   <label for="quantity">Enter Quantity </label>
-  <input type="search">
-  <button type="submit">Add Product</button>
+  <input type="search" #f2>
+  <button type="submit" (click)="submit(f1,f2)">Add Product</button>
 </div>
